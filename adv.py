@@ -3,6 +3,7 @@ from player import Player
 from world import World
 
 import random
+import time
 from ast import literal_eval
 
 # Load world
@@ -98,9 +99,14 @@ visited_rooms = set()
 player.current_room = world.starting_room
 visited_rooms.add(player.current_room)
 
+start_time = time.time()
+
 for move in traversal_path:
     player.travel(move)
     visited_rooms.add(player.current_room)
+
+end_time = time.time()
+print("Maze traverse in", end_time - start_time, "seconds.")
 
 if len(visited_rooms) == len(room_graph):
     print(
