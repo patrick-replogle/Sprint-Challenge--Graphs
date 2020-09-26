@@ -1,5 +1,3 @@
-
-
 from room import Room
 from player import Player
 from world import World
@@ -62,7 +60,7 @@ def get_traversal_directions(maze, player):
     final_directions = []
     reverse_directions = []
     visited = {}
-
+    # Add starting room to visited dict
     build_initial_dict_entry_value(visited, player.current_room)
 
     while len(visited) < len(room_graph):
