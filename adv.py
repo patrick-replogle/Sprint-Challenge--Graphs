@@ -90,8 +90,8 @@ def get_traversal_directions(maze):
                         # If not, create an entry for it in the visited dict and then break out of loop
                         build_initial_dict_entry_value(
                             visited, new_player.current_room)
-                        visited[new_player.current_room.id][backtrack_move] = prev_room_id
-                        break
+                    visited[new_player.current_room.id][backtrack_move] = prev_room_id
+                    break
 
         # Else there are no unexplored exits in the current room and it's time to backtrack
         else:
